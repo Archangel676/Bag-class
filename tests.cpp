@@ -222,20 +222,21 @@ TEST_CASE("Empty")
   }
 }
 
-// TEST_CASE( "NumberOf" ) {
-//     cout << "(9) NumberOf" << endl;
+TEST_CASE("NumberOf")
+{
+  cout << "(9) NumberOf" << endl;
 
-//     Bag<int> b;
-//     b.addItem(1);
-//     b.addItem(2);
-//     b.addItem(1);
-//     b.addItem(2);
-//     b.addItem(1);
+  Bag<int> b;
+  b.addItem(1);
+  b.addItem(2);
+  b.addItem(1);
+  b.addItem(2);
+  b.addItem(1);
 
-//     REQUIRE( b.numberOf(1) == 3 );
-//     REQUIRE( b.numberOf(2) == 2 );
-//     REQUIRE( b.numberOf(3) == 0 );
-// }
+  REQUIRE(b.numberOf(1) == 3);
+  REQUIRE(b.numberOf(2) == 2);
+  REQUIRE(b.numberOf(3) == 0);
+}
 
 // TEST_CASE( "RemoveAll" ) {
 //     cout << "(10) Remove All" << endl;

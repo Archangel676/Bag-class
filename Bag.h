@@ -129,6 +129,19 @@ public:
   {
     sizeInUse = 0;
   }
+
+  int numberOf(T item)
+  {
+    int num = 0;
+
+    if (contains(item)) {
+      for (int i = 0; i < sizeInUse; i++) {
+        if (bagArray[i] == item)
+          num++;
+      }
+    }
+    return num;
+  }
 };
 
 #endif
