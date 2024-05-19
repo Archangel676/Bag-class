@@ -92,10 +92,10 @@ public:
     string s = "";
     s += "{";
     for (int i = 0; i < sizeInUse - 1; i++) {
-      s += bagArray[i];
+      s += static_cast<string>(bagArray[i]);
     }
 
-    s += bagArray[sizeInUse];
+    s += static_cast<string>(bagArray[sizeInUse]);
     s += "}";
 
     return s;
