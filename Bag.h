@@ -30,7 +30,18 @@ public:
     }
   }
 
-  Copy constructor, Assignment Operator
+  T& operator=(const T& other)
+  {
+    if (this != other) {
+      capacity = other.capacity;
+
+      delete[] bagArray;
+
+      bagArray = new T[capacity];
+    }
+  }
+
+  Assignment Operator
 };
 
 #endif
