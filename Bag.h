@@ -1,6 +1,7 @@
 #ifndef BAG_H
 #define BAG_H
 
+#include <assert.h>
 #include <iostream>
 #include <string>
 
@@ -150,6 +151,19 @@ public:
       removeItem(item);
     }
   }
+
+  T pickRandom()
+  {
+    assert(!isEmpty());
+    int randNum = rand() % sizeInUse;
+    T thing = bagArray[randNum];
+    removeItem(thing);
+    return thing;
+  }
+
+  // void dumpInto(Bag<T>& other){
+
+  // }
 };
 
 #endif

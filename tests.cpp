@@ -294,53 +294,56 @@ TEST_CASE("RemoveAll")
   }
 }
 
-// TEST_CASE( "PickRandom" ) {
-//     cout << "(11) PickRandom" << endl;
+TEST_CASE("PickRandom")
+{
+  cout << "(11) PickRandom" << endl;
 
-//     //Use a fixed seed for first test
-//     srand(100);
-//     SUBCASE( "PickRandom/ClearOut" ) {
-//         cout << "   ...Clear out" << endl;
-//         Bag<int> b;
-//         b.addItem(0);
-//         b.addItem(1);
-//         b.addItem(2);
+  // Use a fixed seed for first test
+  srand(100);
+  SUBCASE("PickRandom/ClearOut")
+  {
+    cout << "   ...Clear out" << endl;
+    Bag<int> b;
+    b.addItem(0);
+    b.addItem(1);
+    b.addItem(2);
 
-//         bool chosen[3] = {false};
-//         for(int i = 0; i < 3; i++) {
-//             int picked = b.pickRandom();
-//             chosen[picked] = true;
-//         }
-//         bool seenAll = chosen[0] && chosen[1] && chosen[2];
-//         REQUIRE( seenAll );
-//     }
+    bool chosen[3] = {false};
+    for (int i = 0; i < 3; i++) {
+      int picked = b.pickRandom();
+      chosen[picked] = true;
+    }
+    bool seenAll = chosen[0] && chosen[1] && chosen[2];
+    REQUIRE(seenAll);
+  }
 
-//     //Random seed for rest of test
-//     srand(time(0));
+  // Random seed for rest of test
+  srand(time(0));
 
-//     SUBCASE( "PickRandom/Probability" ) {
-//         cout << "   ...Probability" << endl;
-//         int AsPicked = 0;
-//         for(int i = 0; i < 1000; i++) {
-//             Bag<char> b;
-//             b.addItem('B');
-//             b.addItem('B');
-//             b.addItem('A');
-//             b.addItem('B');
-//             b.addItem('B');
-//             if( b.pickRandom() == 'A' )
-//                 AsPicked++;
-//         }
+  SUBCASE("PickRandom/Probability")
+  {
+    cout << "   ...Probability" << endl;
+    int AsPicked = 0;
+    for (int i = 0; i < 1000; i++) {
+      Bag<char> b;
+      b.addItem('B');
+      b.addItem('B');
+      b.addItem('A');
+      b.addItem('B');
+      b.addItem('B');
+      if (b.pickRandom() == 'A')
+        AsPicked++;
+    }
 
-//         /*
-//         WARN("This is a probabilistic test.");
-//         WARN("You should fail this less than 1% of the time.");
-//         WARN("If you fail, rerun a few times and see if you pass those.");
-//         */
-//         bool inRange = AsPicked > 170 && AsPicked < 230;
-//         REQUIRE( inRange );
-//     }
-// }
+    /*
+    WARN("This is a probabilistic test.");
+    WARN("You should fail this less than 1% of the time.");
+    WARN("If you fail, rerun a few times and see if you pass those.");
+    */
+    bool inRange = AsPicked > 170 && AsPicked < 230;
+    REQUIRE(inRange);
+  }
+}
 
 // TEST_CASE( "dumpInto" ) {
 //     cout << "(12) dumpInto" << endl;
