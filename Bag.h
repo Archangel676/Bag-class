@@ -163,7 +163,7 @@ public:
 
   void dumpInto(Bag<T>& other)
   {
-    other = this;
+    other = this*;
   }
 };
 
