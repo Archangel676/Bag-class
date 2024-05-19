@@ -4,7 +4,7 @@ CXXFLAGS += -std=c++17 -pedantic -pedantic-errors
 CXXFLAGS += -Wfloat-equal -Wredundant-decls -Wshadow -Wconversion
 
 # list .h files here
-HEADERS =
+HEADERS = Bag.h
 
 # list .cpp files here
 TEST_FILES = tests.cpp
