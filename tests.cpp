@@ -364,43 +364,45 @@ TEST_CASE("dumpInto")
   REQUIRE(b2.isEmpty());
 }
 
-// TEST_CASE( "ExtractAll" ) {
-//     cout << "(13) ExtractAll" << endl;
+TEST_CASE("ExtractAll")
+{
+  cout << "(13) ExtractAll" << endl;
 
-//     SUBCASE( "ExtractAll/Basic" ) {
-//         cout << "   ...Basic" << endl;
-//         Bag<char> b;
+  SUBCASE("ExtractAll/Basic")
+  {
+    cout << "   ...Basic" << endl;
+    Bag<char> b;
 
-//         b.addItem('A');
-//         b.addItem('B');
-//         b.addItem('B');
-//         b.addItem('A');
-//         b.addItem('B');
-//         b.addItem('B');
+    b.addItem('A');
+    b.addItem('B');
+    b.addItem('B');
+    b.addItem('A');
+    b.addItem('B');
+    b.addItem('B');
 
-//         Bag<char> b2 = b.extractAll('B');
+    Bag<char> b2 = b.extractAll('B');
 
-//         REQUIRE( !b.contains('B') );
-//         REQUIRE( !b2.contains('A') );
-//         REQUIRE( b2.numberOf('B') == 4 );
-//     }
+    REQUIRE(!b.contains('B'));
+    REQUIRE(!b2.contains('A'));
+    REQUIRE(b2.numberOf('B') == 4);
+  }
 
-//     SUBCASE( "ExtractAll/NoMatches" ) {
-//         cout << "   ...NoMatches" << endl;
-//         Bag<char> b;
+  SUBCASE("ExtractAll/NoMatches")
+  {
+    cout << "   ...NoMatches" << endl;
+    Bag<char> b;
 
-//         b.addItem('A');
-//         b.addItem('B');
-//         b.addItem('B');
-//         b.addItem('A');
-//         b.addItem('B');
-//         b.addItem('B');
+    b.addItem('A');
+    b.addItem('B');
+    b.addItem('B');
+    b.addItem('A');
+    b.addItem('B');
+    b.addItem('B');
 
-//         Bag<char> b2 = b.extractAll('C');
+    Bag<char> b2 = b.extractAll('C');
 
-//         REQUIRE( b.numberOf('B') == 4 );
-//         REQUIRE( b.numberOf('A') == 2 );
-//         REQUIRE( b2.isEmpty() );
-//     }
-
-// }
+    REQUIRE(b.numberOf('B') == 4);
+    REQUIRE(b.numberOf('A') == 2);
+    REQUIRE(b2.isEmpty());
+  }
+}

@@ -171,6 +171,19 @@ public:
     }
     sizeInUse = 0;
   }
+
+  Bag<T> extractAll(T item)
+  {
+    Bag newBag = Bag();
+    int originalSize = sizeInUse;
+    for (int i = 0; i < originalSize; i++) {
+      if (bagArray[i] == item) {
+        newBag.addItem(bagArray[i]);
+        removeItem(bagArray[i]);
+      }
+    }
+    return newBag;
+  }
 };
 
 #endif
