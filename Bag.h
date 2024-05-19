@@ -98,7 +98,7 @@ public:
       s += to_string(bagArray[i]);
     }
     cout << "s string attempt 2" << s << endl;
-    s += to_string(bagArray[sizeInUse]);
+    s += to_string(bagArray[sizeInUse - 1]);
     s += "}";
     cout << "s string attempt 3" << s << endl;
     return s;
