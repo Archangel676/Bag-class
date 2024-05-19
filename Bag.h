@@ -91,9 +91,13 @@ public:
   {
     string s = "";
     s += "{";
-    for (int i = 0; i < sizeInUse; i++) {
+    for (int i = 0; i < sizeInUse - 1; i++) {
+      s += bagArray[i];
     }
+
+    s += bagArray[sizeInUse];
     s += "}";
+
     return s;
   }
 };
