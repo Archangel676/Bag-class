@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <string>
-using std::string;
-using std::to_string;
+
+using namespace std;
 
 template<typename T>
 
