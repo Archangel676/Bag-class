@@ -117,6 +117,18 @@ public:
     }
     return false;
   }
+
+  bool isEmpty()
+  {
+    if (sizeInUse == 0)
+      return true;
+    return false;
+  }
+
+  void dump()
+  {
+    sizeInUse = 0;
+  }
 };
 
 #endif

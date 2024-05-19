@@ -182,41 +182,45 @@ TEST_CASE("RemoveItem")
   REQUIRE(!wasRemoved);
 }
 
-// TEST_CASE( "Dump" ) {
-//     cout << "(7) Dump" << endl;
-//     Bag<int> b;
+TEST_CASE("Dump")
+{
+  cout << "(7) Dump" << endl;
+  Bag<int> b;
 
-//     for(int i = 0; i < 8; i++)
-//         b.addItem(i);
+  for (int i = 0; i < 8; i++)
+    b.addItem(i);
 
-//     b.dump();
+  b.dump();
 
-//     for(int i = 0; i < 8; i++)
-//         REQUIRE( !b.contains(i) );
-// }
+  for (int i = 0; i < 8; i++)
+    REQUIRE(!b.contains(i));
+}
 
-// TEST_CASE( "Empty" ) {
-//     cout << "(8) Empty" << endl;
+TEST_CASE("Empty")
+{
+  cout << "(8) Empty" << endl;
 
-//     SUBCASE( "Empty/Dump") {
-//         Bag<char> b;
-//         cout << "   ...Dump" << endl;
-//         REQUIRE( b.isEmpty() );
-//         b.addItem('A');
-//         b.addItem('B');
-//         REQUIRE( !b.isEmpty() );
-//         b.dump();
-//         REQUIRE( b.isEmpty() );
-//     }
+  SUBCASE("Empty/Dump")
+  {
+    Bag<char> b;
+    cout << "   ...Dump" << endl;
+    REQUIRE(b.isEmpty());
+    b.addItem('A');
+    b.addItem('B');
+    REQUIRE(!b.isEmpty());
+    b.dump();
+    REQUIRE(b.isEmpty());
+  }
 
-//     SUBCASE( "Empty/RemoveItem") {
-//         Bag<char> b;
-//         cout << "   ...removeItem" << endl;
-//         b.addItem('A');
-//         b.removeItem('A');
-//         REQUIRE( b.isEmpty() );
-//     }
-// }
+  SUBCASE("Empty/RemoveItem")
+  {
+    Bag<char> b;
+    cout << "   ...removeItem" << endl;
+    b.addItem('A');
+    b.removeItem('A');
+    REQUIRE(b.isEmpty());
+  }
+}
 
 // TEST_CASE( "NumberOf" ) {
 //     cout << "(9) NumberOf" << endl;
