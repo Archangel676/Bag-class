@@ -139,23 +139,23 @@ TEST_CASE("toString")
   REQUIRE(s3 == "{1, 2, 3, 4}");
 }
 
-// ////Only need this OR toString, not both
-// //TEST_CASE( "StreamInsertion" ) {
-// //    cout << "(5) StreamInsertion" << endl;
-// //    Bag<int> b;
+////Only need this OR toString, not both
+// TEST_CASE( "StreamInsertion" ) {
+//     cout << "(5) StreamInsertion" << endl;
+//     Bag<int> b;
 
-// //    stringstream s1;
-// //    s1 << b;
-// //    REQUIRE( s1.str() == "{}" );
+//    stringstream s1;
+//    s1 << b;
+//    REQUIRE( s1.str() == "{}" );
 
-// //    b.addItem(1);
-// //    b.addItem(2);
-// //    b.addItem(3);
+//    b.addItem(1);
+//    b.addItem(2);
+//    b.addItem(3);
 
-// //    s1.str("");
-// //    s1 << b;
-// //    REQUIRE( s1.str() == "{1, 2, 3}" );
-// //}
+//    s1.str("");
+//    s1 << b;
+//    REQUIRE( s1.str() == "{1, 2, 3}" );
+//}
 
 // TEST_CASE( "RemoveItem" ) {
 //     cout << "(6) RemoveItem" << endl;
