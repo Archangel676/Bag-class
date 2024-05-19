@@ -103,6 +103,18 @@ public:
     s += "}";
     return s;
   }
+
+  bool removeItem(T item)
+  {
+    if (contains(item)) {
+      for (int i = 0; i < sizeInUse; i++) {
+        if (bagArray[i] == item)
+          ;
+      }
+      return true;
+    }
+    return false;
+  }
 };
 
 #endif
