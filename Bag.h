@@ -14,7 +14,7 @@ private:
     int newCapacity = capacity + 10;
     T* tempArray = new T[newCapacity];
 
-    for (int i = 0; i < capacity; i++) {
+    for (int i = 0; i < sizeInUse; i++) {
       tempArray[i] = bagArray[i];
     }
 
@@ -41,23 +41,25 @@ public:
   Bag(const Bag& other)
   {
     capacity = other.capacity;
+    sizeInUse = other.sizeInUse;
     bagArray = new T[capacity];
 
-    for (int i = 0; i < capacity; i++) {
+    for (int i = 0; i < sizeInUse; i++) {
       bagArray[i] = other.bagArray[i];
     }
   }
 
-  T& operator=(const T& other)
+  Bag& operator=(const Bag& other)
   {
-    if (this != other) {
+    if (this != &other) {
       capacity = other.capacity;
+      sizeInUse = other.sizeInUse;
 
       delete[] bagArray;
 
       bagArray = new T[capacity];
 
-      for (int i = 0; i < capacity; i++) {
+      for (int i = 0; i < sizeInUse; i++) {
         bagArray[i] = other.bagArray[i];
       }
     }
@@ -70,23 +72,16 @@ public:
       grow();
 
     bagArray[sizeInUse] = item;
-
     sizeInUse++;
   }
 
   bool contains(T item)
   {
-    bool contains = false;
-    int count = 0;
-
     for (int i = 0; i < sizeInUse; i++) {
       if (bagArray[i] == item)
-        count++;
+        return true;
     }
-    if (count > 0)
-      contains = true;
-
-    return contains;
+    return false;
   }
 };
 
