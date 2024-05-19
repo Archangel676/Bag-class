@@ -142,6 +142,14 @@ public:
     }
     return num;
   }
+
+  void removeAll(T item)
+  {
+    int numbOfTimes = numberOf(item);
+    for (int i = 0; i < numbOfTimes; i++) {
+      removeItem(item);
+    }
+  }
 };
 
 #endif

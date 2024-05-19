@@ -238,57 +238,61 @@ TEST_CASE("NumberOf")
   REQUIRE(b.numberOf(3) == 0);
 }
 
-// TEST_CASE( "RemoveAll" ) {
-//     cout << "(10) Remove All" << endl;
+TEST_CASE("RemoveAll")
+{
+  cout << "(10) Remove All" << endl;
 
-//     SUBCASE( "removeAll/Basic" ) {
-//         cout << "   ...basic" << endl;
-//         Bag<int> b;
-//         b.addItem(1);
-//         b.addItem(2);
-//         b.addItem(1);
-//         b.addItem(2);
-//         b.addItem(1);
-//         b.addItem(2);
+  SUBCASE("removeAll/Basic")
+  {
+    cout << "   ...basic" << endl;
+    Bag<int> b;
+    b.addItem(1);
+    b.addItem(2);
+    b.addItem(1);
+    b.addItem(2);
+    b.addItem(1);
+    b.addItem(2);
 
-//         b.removeAll(1);
-//         REQUIRE( b.numberOf(1) == 0 );
-//         REQUIRE( b.numberOf(2) == 3 );
-//     }
+    b.removeAll(1);
+    REQUIRE(b.numberOf(1) == 0);
+    REQUIRE(b.numberOf(2) == 3);
+  }
 
-//     SUBCASE( "RemoveAll/Consecutive" ) {
-//         cout << "   ...Consecutive items" << endl;
-//         Bag<char> b;
-//         b.addItem('B');
-//         b.addItem('A');
-//         b.addItem('A');
-//         b.addItem('B');
-//         b.addItem('A');
-//         b.addItem('A');
-//         b.addItem('A');
-//         b.addItem('B');
+  SUBCASE("RemoveAll/Consecutive")
+  {
+    cout << "   ...Consecutive items" << endl;
+    Bag<char> b;
+    b.addItem('B');
+    b.addItem('A');
+    b.addItem('A');
+    b.addItem('B');
+    b.addItem('A');
+    b.addItem('A');
+    b.addItem('A');
+    b.addItem('B');
 
-//         b.removeAll('A');
-//         REQUIRE( b.numberOf('A') == 0 );
-//         REQUIRE( b.numberOf('B') == 3 );
-//     }
+    b.removeAll('A');
+    REQUIRE(b.numberOf('A') == 0);
+    REQUIRE(b.numberOf('B') == 3);
+  }
 
-//     SUBCASE( "RemoveAll/Last" ) {
-//         cout << "   ...Last item" << endl;
-//         Bag<int> b;
-//         b.addItem(2);
-//         b.addItem(1);
-//         b.addItem(1);
-//         b.addItem(2);
-//         b.addItem(1);
-//         b.addItem(1);
-//         b.addItem(2);
+  SUBCASE("RemoveAll/Last")
+  {
+    cout << "   ...Last item" << endl;
+    Bag<int> b;
+    b.addItem(2);
+    b.addItem(1);
+    b.addItem(1);
+    b.addItem(2);
+    b.addItem(1);
+    b.addItem(1);
+    b.addItem(2);
 
-//         b.removeAll(2);
-//         REQUIRE( b.numberOf(1) == 4 );
-//         REQUIRE( b.numberOf(2) == 0 );
-//     }
-// }
+    b.removeAll(2);
+    REQUIRE(b.numberOf(1) == 4);
+    REQUIRE(b.numberOf(2) == 0);
+  }
+}
 
 // TEST_CASE( "PickRandom" ) {
 //     cout << "(11) PickRandom" << endl;
