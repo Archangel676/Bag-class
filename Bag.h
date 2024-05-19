@@ -164,6 +164,7 @@ public:
   void dumpInto(Bag<T>& other)
   {
     other = this*;
+    sizeInUse = 0;
   }
 };
 
