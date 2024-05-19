@@ -1,6 +1,7 @@
 #ifndef BAG_H
 #define BAG_H
 
+#include <iostream>
 #include <string>
 using std::string;
 using std::to_string;
@@ -92,13 +93,14 @@ public:
   {
     string s = "";
     s += "{";
+    cout << s;
     for (int i = 0; i < sizeInUse - 1; i++) {
       s += to_string(bagArray[i]);
     }
-
+    cout << s;
     s += to_string(bagArray[sizeInUse]);
     s += "}";
-
+    cout << s;
     return s;
   }
 };
