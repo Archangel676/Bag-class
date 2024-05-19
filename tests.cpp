@@ -318,7 +318,7 @@ TEST_CASE("PickRandom")
   }
 
   // Random seed for rest of test
-  srand(time(0));
+  srand(static_cast<unsigned int>(time(0)));
 
   SUBCASE("PickRandom/Probability")
   {
