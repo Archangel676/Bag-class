@@ -161,9 +161,10 @@ public:
     return thing;
   }
 
-  // void dumpInto(Bag<T>& other){
-
-  // }
+  void dumpInto(Bag<T>& other)
+  {
+    other = this;
+  }
 };
 
 #endif

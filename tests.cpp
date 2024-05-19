@@ -345,23 +345,24 @@ TEST_CASE("PickRandom")
   }
 }
 
-// TEST_CASE( "dumpInto" ) {
-//     cout << "(12) dumpInto" << endl;
-//     Bag<char> b;
-//     Bag<char> b2;
+TEST_CASE("dumpInto")
+{
+  cout << "(12) dumpInto" << endl;
+  Bag<char> b;
+  Bag<char> b2;
 
-//     b.addItem('A');
-//     b.addItem('B');
-//     b2.addItem('C');
-//     b2.addItem('D');
-//     b2.dumpInto(b);
+  b.addItem('A');
+  b.addItem('B');
+  b2.addItem('C');
+  b2.addItem('D');
+  b2.dumpInto(b);
 
-//     REQUIRE( b.contains('A') );
-//     REQUIRE( b.contains('B') );
-//     REQUIRE( b.contains('C') );
-//     REQUIRE( b.contains('D') );
-//     REQUIRE( b2.isEmpty() );
-// }
+  REQUIRE(b.contains('A'));
+  REQUIRE(b.contains('B'));
+  REQUIRE(b.contains('C'));
+  REQUIRE(b.contains('D'));
+  REQUIRE(b2.isEmpty());
+}
 
 // TEST_CASE( "ExtractAll" ) {
 //     cout << "(13) ExtractAll" << endl;
