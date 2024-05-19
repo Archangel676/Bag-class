@@ -118,25 +118,26 @@ TEST_CASE("AssignmentOp")
   }
 }
 
-// TEST_CASE( "toString" ) {
-//     cout << "(5) toString" << endl;
+TEST_CASE("toString")
+{
+  cout << "(5) toString" << endl;
 
-//     Bag<int> b;
+  Bag<int> b;
 
-//     string s1 = b.toString();
-//     REQUIRE( s1 == "{}" );
+  string s1 = b.toString();
+  REQUIRE(s1 == "{}");
 
-//     b.addItem(1);
-//     b.addItem(2);
-//     b.addItem(3);
+  b.addItem(1);
+  b.addItem(2);
+  b.addItem(3);
 
-//     string s2 = b.toString();
-//     REQUIRE( s2 == "{1, 2, 3}" );
+  string s2 = b.toString();
+  REQUIRE(s2 == "{1, 2, 3}");
 
-//     b.addItem(4);
-//     string s3 = b.toString();
-//     REQUIRE( s3 == "{1, 2, 3, 4}" );
-// }
+  b.addItem(4);
+  string s3 = b.toString();
+  REQUIRE(s3 == "{1, 2, 3, 4}");
+}
 
 // ////Only need this OR toString, not both
 // //TEST_CASE( "StreamInsertion" ) {

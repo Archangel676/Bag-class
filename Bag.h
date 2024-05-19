@@ -83,6 +83,15 @@ public:
     }
     return false;
   }
+
+  string toString() const
+  {
+    string s = "";
+    s += "{" for (int i = 0; i < sizeInUse; i++)
+    {
+    }
+    s += "}" return s;
+  }
 };
 
 #endif
