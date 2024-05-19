@@ -108,10 +108,11 @@ public:
   {
     if (contains(item)) {
       for (int i = 0; i < sizeInUse; i++) {
-        if (bagArray[i] == item)
-          ;
+        if (bagArray[i] == item) {
+          bagArray[i] = bagArray[sizeInUse - 1];
+          sizeInUse-- return true;
+        }
       }
-      return true;
     }
     return false;
   }

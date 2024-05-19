@@ -157,29 +157,30 @@ TEST_CASE("toString")
 //    REQUIRE( s1.str() == "{1, 2, 3}" );
 //}
 
-// TEST_CASE( "RemoveItem" ) {
-//     cout << "(6) RemoveItem" << endl;
-//     Bag<int> b;
-//     b.addItem(100);
-//     b.addItem(100);
-//     b.addItem(200);
-//     b.addItem(100);
-//     bool wasRemoved;
+TEST_CASE("RemoveItem")
+{
+  cout << "(6) RemoveItem" << endl;
+  Bag<int> b;
+  b.addItem(100);
+  b.addItem(100);
+  b.addItem(200);
+  b.addItem(100);
+  bool wasRemoved;
 
-//     wasRemoved = b.removeItem(100);
-//     REQUIRE( wasRemoved );
-//     REQUIRE( b.contains(100) );
+  wasRemoved = b.removeItem(100);
+  REQUIRE(wasRemoved);
+  REQUIRE(b.contains(100));
 
-//     wasRemoved = b.removeItem(100);
-//     REQUIRE( wasRemoved );
-//     REQUIRE( b.contains(100) );
-//     wasRemoved = b.removeItem(100);
-//     REQUIRE( wasRemoved );
-//     REQUIRE( !b.contains(100) );
+  wasRemoved = b.removeItem(100);
+  REQUIRE(wasRemoved);
+  REQUIRE(b.contains(100));
+  wasRemoved = b.removeItem(100);
+  REQUIRE(wasRemoved);
+  REQUIRE(!b.contains(100));
 
-//     wasRemoved = b.removeItem(100);
-//     REQUIRE( !wasRemoved );
-// }
+  wasRemoved = b.removeItem(100);
+  REQUIRE(!wasRemoved);
+}
 
 // TEST_CASE( "Dump" ) {
 //     cout << "(7) Dump" << endl;
