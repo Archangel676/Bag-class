@@ -110,7 +110,8 @@ public:
       for (int i = 0; i < sizeInUse; i++) {
         if (bagArray[i] == item) {
           bagArray[i] = bagArray[sizeInUse - 1];
-          sizeInUse-- return true;
+          sizeInUse--;
+          return true;
         }
       }
     }
