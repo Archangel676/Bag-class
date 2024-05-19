@@ -10,27 +10,6 @@ using namespace std;
 template<typename T>
 
 class Bag {
-private:
-  int capacity;
-  int sizeInUse;
-  T* bagArray = nullptr;
-
-  void grow()
-  {
-    int newCapacity = capacity + 10;
-    T* tempArray = new T[newCapacity];
-
-    for (int i = 0; i < sizeInUse; i++) {
-      tempArray[i] = bagArray[i];
-    }
-
-    capacity = newCapacity;
-
-    delete[] bagArray;
-
-    bagArray = tempArray;
-  }
-
 public:
   Bag()
   {
@@ -183,6 +162,27 @@ public:
       }
     }
     return newBag;
+  }
+
+private:
+  int capacity;
+  int sizeInUse;
+  T* bagArray = nullptr;
+
+  void grow()
+  {
+    int newCapacity = capacity + 10;
+    T* tempArray = new T[newCapacity];
+
+    for (int i = 0; i < sizeInUse; i++) {
+      tempArray[i] = bagArray[i];
+    }
+
+    capacity = newCapacity;
+
+    delete[] bagArray;
+
+    bagArray = tempArray;
   }
 };
 
