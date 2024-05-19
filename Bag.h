@@ -163,7 +163,12 @@ public:
 
   void dumpInto(Bag<T>& other)
   {
-    other = this*;
+    other.capacity = capacity;
+    other.sizeInUse = sizeInUse;
+
+    for (int i = 0; i < sizeInUse; i++) {
+      other.addItem(bagArray[i]);
+    }
     sizeInUse = 0;
   }
 };
