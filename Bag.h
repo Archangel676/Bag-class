@@ -1,6 +1,9 @@
 #ifndef BAG_H
 #define BAG_H
 
+#include <string>
+using std::string;
+
 template<typename T>
 
 class Bag {
