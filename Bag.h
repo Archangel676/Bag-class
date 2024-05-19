@@ -93,14 +93,14 @@ public:
   {
     string s = "";
     s += "{";
-    cout << s;
+    cout << "s string attempt 1" << s << endl;
     for (int i = 0; i < sizeInUse - 1; i++) {
       s += to_string(bagArray[i]);
     }
-    cout << s;
+    cout << "s string attempt 2" << s << endl;
     s += to_string(bagArray[sizeInUse]);
     s += "}";
-    cout << s;
+    cout << "s string attempt 3" << s << endl;
     return s;
   }
 };
